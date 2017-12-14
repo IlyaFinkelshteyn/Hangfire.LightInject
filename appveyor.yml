@@ -1,0 +1,15 @@
+version: 1.0.{build}
+skip_non_tags: true
+image: Visual Studio 2017
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+before_build:
+- cmd: nuget restore .\HangFire.LightInject\Hangfire.LightInject.sln
+build:
+  project: HangFire.LightInject\HangFire.LightInject\HangFire.LightInject.csproj
+  publish_nuget: true
+  verbosity: minimal
