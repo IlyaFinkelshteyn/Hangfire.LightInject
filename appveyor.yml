@@ -10,6 +10,6 @@ assembly_info:
 before_build:
 - cmd: nuget restore .\HangFire.LightInject\Hangfire.LightInject.sln
 build:
-  project: HangFire.LightInject\HangFire.LightInject\HangFire.LightInject.csproj
+  project: HangFire.LightInject\HangFire.LightInject
   publish_nuget: true
   verbosity: minimal
